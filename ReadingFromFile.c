@@ -435,3 +435,10 @@ printf("\n");
  
     return 0;
 }
+
+/** MakeFile: Change the name of the .c file to use it for your purpose
+main:main.c
+	gcc -std=gnu11 -Werror -Wall -o main main.c -g
+**/
+
+// Sumit Barua, All Rights reserved
