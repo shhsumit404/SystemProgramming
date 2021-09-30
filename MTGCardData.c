@@ -1,3 +1,31 @@
+/* card.h
+
+#ifndef CARD_H
+#define CARD_H
+
+enum rarity
+{
+    common,
+    uncommon,
+    rare,
+    mythic
+};
+
+struct card
+{
+    unsigned int id;
+    char* name;
+    char* cost;
+    unsigned int converted_cost;
+    char* type;
+    char* text;
+    char* stats;
+    enum rarity rarity;
+};
+
+#endif
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -474,3 +502,19 @@ int compare_cards (const struct card* card1, const struct card* card2)
 {
     return strcmp(card1->name, card2->name);
 }
+
+/*
+Makefile:
+default: parser 
+
+parser.o: parser.c card.h 
+	gcc -Wall -std=gnu11 -Werror -c parser.c
+
+parser: parser.o
+	gcc -Wall -std=gnu11 -Werror -o parser parser.o
+
+clean:
+	rm parser.o parser
+*/
+
+// Sumit Barua, All Rights reserved
